@@ -110,7 +110,11 @@ configFileName(configPath)
 	setStringParam(LAMBDA_ConfigFilePath, configPath);
 	
 	// Write version to appropriate parameter
+#ifdef GIT_VERSION
 	setStringParam(NDDriverVersion, GIT_VERSION);
+#else
+	setStringParam(NDDriverVersion, "1.0");
+#endif
 	
 	/* *************
 	 * DOUBLE PARAMS
